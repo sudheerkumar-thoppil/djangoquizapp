@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+</head>
+<body>
+    <div class="container my-4">
+        <form method="POST" action="">
+            <h3 class="my-4">Login</h3>
+                <table class="table table-bordered">
+                    {% csrf_token %}
+                    {{form.as_table}}
+                    <tr>
+                        <td colspan="2"><input type="submit" class="btn btn-primary"/></td>
+                    </tr>
+                </table>
+        </form>
+    </div>
+</body>
+
+</html>
+{% endblock %}
